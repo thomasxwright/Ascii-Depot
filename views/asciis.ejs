@@ -14,9 +14,9 @@
             <li class='asciiCanvas' data-id='<%=el._id%>'>
                 <!-- <span class='canvas'><%= el.ascii %></span> -->
                 <pre class='canvas'><%= el.ascii %></pre>
-                <span class='del'> Delete </span>
+                <button class='del'> Delete</button>
             </li>
-    <% }) %>    
+    <% }) %>
     </ul>
 
     <form action="/asciis/createAscii" method='POST'>
