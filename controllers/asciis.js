@@ -12,17 +12,19 @@ module.exports = {
         }
     },
     createAsciiArt: async (req, res)=>{
+        //declare variable for rendered ascii image
         let renderedImage
-        let entry = req.body.asciiArt
-            
+        
+        //if text entry begins with "http", assume its an image link - no validation that its an image currently.
         if(req.body.asciiArt.startsWith("http")){
-
+            //use ascii-art-image to generate ascii
             let image = new asciiImage({
                 filepath: req.body.asciiArt.trim(),
                 alphabet: 'variant3'
             });
+            //this may be hacky, needed to use await in order to have renderedImage assigned by the time Ascii.create happens
             await image.write(function(err, rendered){
-                  renderedImage = rendered
+                 renderedImage = rendered
                  outputRender()
              })
             
@@ -37,7 +39,7 @@ module.exports = {
                  }
             }
         }else{
-
+                //if entry is not a hyperlink, just save as a note
                 try{
                     await Ascii.create({ascii: req.body.asciiArt, completed: false, userId: req.user.id})
 
