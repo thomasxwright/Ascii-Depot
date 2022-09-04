@@ -13,7 +13,7 @@
     <% asciis.forEach( el => { %>
             <li class='asciiCanvas' data-id='<%=el._id%>'>
                 <!-- <span class='canvas'><%= el.ascii %></span> -->
-                <pre class='canvas'><%= el.ascii %></pre>
+                <pre class='canvas'><%= el.ascii.replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, '') %></pre>
                 <button class='del'> Delete</button>
             </li>
     <% }) %>

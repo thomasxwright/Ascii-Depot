@@ -1,4 +1,5 @@
 const Ascii = require('../models/Ascii')
+const asciiImage = require('ascii-art-image')
 
 module.exports = {
     getAsciis: async (req,res)=>{
@@ -11,12 +12,40 @@ module.exports = {
         }
     },
     createAsciiArt: async (req, res)=>{
-        try{
-            await Ascii.create({ascii: req.body.asciiArt, userId: req.user.id})
-            console.log('ASCII has been added!')
-            res.redirect('/asciis')
-        }catch(err){
-            console.log(err)
+        let renderedImage
+        let entry = req.body.asciiArt
+            
+        if(req.body.asciiArt.startsWith("http")){
+
+            let image = new asciiImage({
+                filepath: req.body.asciiArt.trim(),
+                alphabet: 'variant3'
+            });
+            await image.write(function(err, rendered){
+                  renderedImage = rendered
+                 outputRender()
+             })
+            
+            function outputRender() {
+                console.log(renderedImage)
+                try {
+                    Ascii.create({ascii: renderedImage, completed: false, userId: req.user.id})
+                    console.log('Ascii has been added!')
+                    res.redirect('/asciis')
+                } catch (err) {
+                    console.log(err)
+                 }
+            }
+        }else{
+
+                try{
+                    await Ascii.create({ascii: req.body.asciiArt, completed: false, userId: req.user.id})
+
+                    console.log('Ascii has been added!')
+                    res.redirect('/asciis')
+                }catch(err){
+                    console.log(err)
+                }   
         }
     },
     deleteAscii: async (req, res)=>{
