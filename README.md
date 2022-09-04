@@ -2,7 +2,7 @@
 
 A Simple ToDo App built using the MVC Architecture that has been altered to accept hyperlink images and convert them to ASCII art - after all, a picture is worth a thousand words. 
 
-![example ascii output](https://i.ibb.co/0r7rbV1/Screenshot-2022-09-04-093528.png)
+![example ascii output](https://i.ibb.co/k6LnRcL/redacted-Screenshot-2022-09-04-093528.png)
 
 ---
 
@@ -10,6 +10,13 @@ A Simple ToDo App built using the MVC Architecture that has been altered to acce
 
 - To practice working on a new codebase with a new team of developers 
 - To understand how MVC concept and logins are added
+
+---
+
+# How to Use
+1. Install packages and dependencies
+2. Create .env file with PORT and DB_STRING to a MongoDB cluster
+3. Input text to save a note or a link to an image to generate an ascii note
 
 ---
 
