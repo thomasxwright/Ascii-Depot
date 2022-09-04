@@ -1,16 +1,15 @@
 # Introduction
 
-A Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
+A Simple ToDo App built using the MVC Architecture that has been altered to accept hyperlink images and convert them to ASCII art - after all, a picture is worth a thousand words. 
 
----
-
-> Be sure to add that lovely star 😀 and fork it for your own copy
+![example ascii output](https://i.ibb.co/0r7rbV1/Screenshot-2022-09-04-093528.png)
 
 ---
 
 # Objectives
 
-- It's a beginner level app created to understand how MVC concept and logins are added
+- To practice working on a new codebase with a new team of developers 
+- To understand how MVC concept and logins are added
 
 ---
 
@@ -22,13 +21,14 @@ A Simple ToDo App is built using the MVC Architecture, we have also implemented 
 
 # Packages/Dependencies used 
 
-bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
+bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator, ascii-art-image
 
 ---
 
 # Install all the dependencies or node packages used for development via Terminal
 
-`npm install` 
+`npm install`
+`npm install ascii-art-image`
 
 ---
 
