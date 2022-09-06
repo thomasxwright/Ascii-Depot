@@ -7,7 +7,7 @@ A Full Stack Web Application that accepts hyperlinked images and converts them t
 Built using Node.js, MongoDB, and Express.js. Utilizes the MVC architecture. 
 
 
-![example ascii output](https://i.ibb.co/k6LnRcL/redacted-Screenshot-2022-09-04-093528.png)
+![example ascii output](https://i.ibb.co/6wX4f88/Screen-Shot-2022-09-06-at-3-50-22-PM.png)
 
 
 ---
