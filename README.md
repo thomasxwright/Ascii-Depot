@@ -1,8 +1,8 @@
 # Introduction
 
-A Simple ToDo App that has been altered to accept hyperlinked images and convert them to ASCII art - after all, a picture is worth a thousand words. Built using the MVC Architecture 
+A Simple Ascii Storage ppp that allows users to input hyperlinked images and convert them to ASCII art - after all, a picture is worth a thousand words. Built using the MVC Architecture 
 
-Live Demo: https://ascii-notes.herokuapp.com/
+Live Demo: https://ascmii.herokuapp.com/
 
 ![example ascii output](https://i.ibb.co/6wX4f88/Screen-Shot-2022-09-06-at-3-50-22-PM.png)
 
@@ -10,7 +10,7 @@ Live Demo: https://ascii-notes.herokuapp.com/
 
 # Objectives
 
-- To practice working on a new codebase with a new team of developers - the team managed the project on github using dev branches and PRs
+- Collaborate on a new codebase with a new team of developers - the team managed the project on github
 - To understand how MVC concept and logins are added
 
 ---
