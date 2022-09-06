@@ -4,7 +4,7 @@ A Simple ToDo App that has been altered to accept hyperlinked images and convert
 
 Live Demo: https://ascii-notes.herokuapp.com/
 
-![example ascii output](https://i.ibb.co/k6LnRcL/redacted-Screenshot-2022-09-04-093528.png)
+![example ascii output](https://i.ibb.co/6wX4f88/Screen-Shot-2022-09-06-at-3-50-22-PM.png)
 
 ---
 
@@ -42,8 +42,9 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 
 # Things to add
 
- - Ability to upload your own images (Partial functionality in place)
- - Adjust styling
- - Make site responsive
+- Ability to upload your own images (Partial functionality in place)
+- Error handling for bad links
+- Adjust styling
+- Make site responsive
 
 
