@@ -1,49 +1,31 @@
-# Introduction
+# ASCMii
+https://ascmii.herokuapp.com/
 
-A Simple ToDo App that has been altered to accept hyperlinked images and convert them to ASCII art - after all, a picture is worth a thousand words. Built using the MVC Architecture 
+---
+A Full Stack Web Application that accepts hyperlinked images and converts them to ASCII art - After all, a picture is worth a thousand words.
 
-Live Demo: https://ascii-notes.herokuapp.com/
+Built using Node.js, MongoDB, and Express.js. Utilizes the MVC architecture. 
+
 
 ![example ascii output](https://i.ibb.co/k6LnRcL/redacted-Screenshot-2022-09-04-093528.png)
 
----
-
-# Objectives
-
-- To practice working on a new codebase with a new team of developers - the team managed the project on github using dev branches and PRs
-- To understand how MVC concept and logins are added
 
 ---
-
-# How to Use
-1. Install packages and dependencies
-2. Create .env file with PORT and DB_STRING to a MongoDB cluster
-3. Input text to save a note or a link to an image to generate an ascii note
-
----
-
-# Who is this for? 
-
-- It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
+# How to Use:
+1. Install packages and dependencies.
+2. Create .env file with PORT and DB_STRING to a MongoDB cluster.
+3. Input text to save a note or a link to an image to generate an ASCII note.
 
 ---
-
-# Packages/Dependencies used 
-
-bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator, ascii-art-image
+# Packages / Dependencies used:
+ascii-art-image, bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
 
 ---
-
-# Install all the dependencies or node packages used for development via Terminal
-
+# Install Node packages and dependencies used for development via the terminal:
 `npm install`
 
 ---
-
-# Things to add
-
- - Ability to upload your own images (Partial functionality in place)
- - Adjust styling
- - Make site responsive
-
-
+# Future functionality and features:
+- Ability for the user to upload their own images. (partial functionality in place.)
+- Adjust styling, and color palettes.
+- Make application fully responsive by adding CSS Flexbox and CSS Grid.

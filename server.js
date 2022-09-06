@@ -1,4 +1,13 @@
-// Express Application. Require other Node Modules: mongoose, nodemon, passport, and morgan
+/*
+ASCMii - A Full Stack Web Application where users can sign up, display, and save ASCII art to their profile!
+	- 
+	- 
+	- 
+	- Shivakumar Mahakali
+*/
+
+
+// Express Application. Require other Node Modules: mongoose, morgan, nodemon, and passport
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -18,7 +27,7 @@ require('dotenv').config( {path: './config/.env'} );
 require('./config/passport')(passport);
 
 // connect to the MongoDB:
-// [Ensure that the DB_STRING in .env file is set to the proper MongoDB connect. Ensure that it is of the type string.]
+// [Ensure that the DB_STRING in .env file is set to the proper MongoDB connection link. Ensure that it is of the type string.]
 connectDB();
 
 // set view structure as EJS, and enable reading and writing of JSON
@@ -38,16 +47,17 @@ app.use(
 	})
 )
 	
-// Passport middleware
+// passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
-
 app.use(flash());
+
 
 // routing to the main landing page, and the ASCII page once logged in
 app.use('/', mainRoutes);
 app.use('/asciis', asciiRoutes);
- 
+
+
 app.listen(process.env.PORT, () => {
 	console.log("Starting server...");
 	console.log("Server is running...");
