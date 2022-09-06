@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1><%= user.userName %> has some art to show.</h1>
+    <%= typeof msg !='undefined' ? msg : ''%>
     <ul>
     <% asciis.forEach( el => { %>
             <li class='asciiCanvas' data-id='<%=el._id%>'>
@@ -20,10 +21,21 @@
     <% }) %>
     </ul>
 
-    <form action="/asciis/createAscii" method='POST'>
+    <form action="/asciis/postImage" method='POST'>
         <!-- <input type="text" placeholder="Enter Ascii art" name='asciiArt'> -->
         <textarea rows="5" cols="60" name="asciiArt" placeholder="Enter ASCII art"></textarea>
         <input type="submit">
+    </form>
+    <form action="upload" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="title">Title of Image:</label>
+            <input type="text" name="title">
+        </div>
+        <div>
+            <label for="image">Or Upload An Image Here</label>
+            <input type="file" name="image" id="imageInput">
+            <button type="submit">Submit Image</button>
+        </div>
     </form>
 
     <a href="/logout">Logout</a>

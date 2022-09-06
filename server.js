@@ -10,6 +10,7 @@ const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const asciiRoutes = require('./routes/asciis')
 
+
 require('dotenv').config({path: './config/.env'})
 
 // Passport config
@@ -40,6 +41,7 @@ app.use(flash())
   
 app.use('/', mainRoutes)
 app.use('/asciis', asciiRoutes)
+app.post('/upload', asciiRoutes)
  
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')

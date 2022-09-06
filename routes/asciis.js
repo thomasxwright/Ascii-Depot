@@ -7,6 +7,8 @@ router.get('/', ensureAuth, asciisController.getAsciis)
 
 router.post('/createAscii', asciisController.createAsciiArt)
 
+router.post('/upload', asciisController.postImage)
+
 // router.put('/markComplete', todosController.markComplete)
 
 // router.put('/markIncomplete', todosController.markIncomplete)
