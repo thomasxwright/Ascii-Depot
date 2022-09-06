@@ -1,6 +1,8 @@
 # Introduction
 
-A Simple ToDo App built using the MVC Architecture that has been altered to accept hyperlink images and convert them to ASCII art - after all, a picture is worth a thousand words. 
+A Simple ToDo App that has been altered to accept hyperlinked images and convert them to ASCII art - after all, a picture is worth a thousand words. Built using the MVC Architecture 
+
+Live Demo: https://ascii-notes.herokuapp.com/
 
 ![example ascii output](https://i.ibb.co/k6LnRcL/redacted-Screenshot-2022-09-04-093528.png)
 
@@ -8,7 +10,7 @@ A Simple ToDo App built using the MVC Architecture that has been altered to acce
 
 # Objectives
 
-- To practice working on a new codebase with a new team of developers 
+- To practice working on a new codebase with a new team of developers - the team managed the project on github using dev branches and PRs
 - To understand how MVC concept and logins are added
 
 ---
@@ -35,17 +37,13 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 # Install all the dependencies or node packages used for development via Terminal
 
 `npm install`
-`npm install ascii-art-image`
 
 ---
 
 # Things to add
 
-- Create a `.env` file and add the following as `key: value` 
-  - PORT: 2121 (can be any port example: 3000) 
-  - DB_STRING: `your database URI` 
- ---
- 
- Have fun testing and improving it! 😎
+ - Ability to upload your own images (Partial functionality in place)
+ - Adjust styling
+ - Make site responsive
 
 
