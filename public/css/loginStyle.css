@@ -1,0 +1,114 @@
+h1{
+    color:crimson;
+    font-size: 3em;
+    font-family: "Oswald", Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Roboto Mono", Arial, Helvetica, sans-serif;
+}
+
+ul {
+    padding-left: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+a {
+    cursor: pointer;
+    padding: 12px 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+    text-decoration: none;
+    color: white;
+    background-color:crimson;
+    transition-duration: .4s;
+}
+
+a:hover {
+    background-color: rgb(12, 12, 18); /* Green */
+  color: white;
+}
+
+
+ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+form{
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form input{
+    margin: 1rem;
+}
+
+pre{
+    max-width: 350px;
+    background-color: rgb(249, 249, 250);
+    padding: 2%;
+}
+/* @             _________
+ \____       /         \
+ /    \     /   ____    \
+ \_    \   /   /    \    \
+   \    \ (    \__/  )    )
+    \    \_\ \______/    /
+     \      \           /___
+      \______\_________/____"-_ */
+
+/* -------------------Color schemes */
+body.normal {
+    background-color: white;
+    color: black;
+}
+.normal h1 {
+    color: crimson;
+}
+.normal textarea {
+    background-color: white;
+    color: black;
+}
+.normal pre {
+    background-color: rgb(247, 248, 251);
+}
+
+
+body.dark{
+    background-color: black;
+    color: lightgray;
+}
+.dark h1 {
+    color: white;
+}
+.dark textarea {
+    background-color: black;
+    color: white;
+}
+.dark pre {
+    background-color: rgb(12, 12, 18);
+}
+
+
+body.matrix {
+    background-color: black;
+    color: green;
+}
+.matrix h1 {
+    color: green;
+}
+.matrix textarea {
+    background-color: black;
+    color: green;
+}
+.matrix pre {
+    background-color: rgb(12, 15, 18);
+}
