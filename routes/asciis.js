@@ -5,6 +5,8 @@ const { ensureAuth } = require('../middleware/auth')
 
 router.get('/', ensureAuth, asciisController.getAsciis)
 
+// Need to create a 'getImages" function to load images
+
 router.post('/createAscii', asciisController.createAsciiArt)
 
 router.post('/upload', asciisController.postImage)
