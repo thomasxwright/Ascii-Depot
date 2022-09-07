@@ -2,7 +2,7 @@
 ASCMii - A Full Stack Web Application where users can sign up, display, and save ASCII art to their profile!
 	- 
 	- 
-	- 
+	- Eduardo Sanchez
 	- Shivakumar Mahakali
 */
 
