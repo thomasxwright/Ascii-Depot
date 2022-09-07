@@ -1,7 +1,7 @@
 /*
 ASCMii - A Full Stack Web Application where users can sign up, display, and save ASCII art to their profile!
 	- 
-	- 
+	- Erich Sabo
 	- Eduardo Sanchez
 	- Shivakumar Mahakali
 */
