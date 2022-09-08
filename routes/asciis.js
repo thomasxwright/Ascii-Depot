@@ -1,20 +1,34 @@
-const express = require('express')
-const router = express.Router()
-const asciisController = require('../controllers/asciis') 
-const { ensureAuth } = require('../middleware/auth')
+/*
+Main router file for the URL route [ /asciis/ ]
+    - ALL API requests for the URL of "/asciis/" will lead through this router file.
+    - This router handles the: landing page for the asciis, create ascii, delete ascii, and uploading images
+*/
 
-router.get('/', ensureAuth, asciisController.getAsciis)
 
+// require Express, the asciis Controller and the passport.js auth
+const express = require('express');
+const router = express.Router();
+const asciisController = require('../controllers/asciis');
+const { ensureAuth } = require('../middleware/auth');
+
+
+// APIs:
+router.get('/', ensureAuth, asciisController.getAsciis);
+
+router.post('/createAscii', asciisController.createAsciiArt);
+
+router.post('/upload', asciisController.postImage);
+
+router.delete('/deleteAscii', asciisController.deleteAscii);
+
+// TODO:
 // Need to create a 'getImages" function to load images
 
-router.post('/createAscii', asciisController.createAsciiArt)
 
-router.post('/upload', asciisController.postImage)
+module.exports = router;
 
-// router.put('/markComplete', todosController.markComplete)
-
-// router.put('/markIncomplete', todosController.markIncomplete)
-
-router.delete('/deleteAscii', asciisController.deleteAscii)
-
-module.exports = router
+/*
+Legacy Code:
+    - // router.put('/markComplete', todosController.markComplete);
+    - // router.put('/markIncomplete', todosController.markIncomplete);
+*/

@@ -1,12 +1,14 @@
-const deleteBtn = document.querySelectorAll('.del')
-const copyBtn = document.querySelectorAll('.copy')
+// Create variables:
+const deleteBtn = document.querySelectorAll('.del');
+const copyBtn = document.querySelectorAll('.copy');
 
+// Set event listeners:
 Array.from(deleteBtn).forEach((el) => {
-    el.addEventListener('click', deleteAscii)
+    el.addEventListener('click', deleteAscii);
 })
 
-Array.from(copyBtn).forEach(el => {
-    el.addEventListener('click', setClipboardToCanvas)
+Array.from(copyBtn).forEach((el) => {
+    el.addEventListener('click', setClipboardToCanvas);
 })
 
 
@@ -29,20 +31,26 @@ async function deleteAscii() {
                 'asciiId': asciiId
             })
         })
+
         const data = await response.json()
-        console.log(data)
-        location.reload()
+        console.log(data);
+        location.reload();
+
     } catch (err) {
-        console.log(err)
+        console.log(err);
     }
 }
 
-document.querySelector('.darkBtn').addEventListener('click', () => changeMode('dark'))
-document.querySelector('.matrixBtn').addEventListener('click', () => changeMode('matrix'))
-document.querySelector('.normalBtn').addEventListener('click', () => changeMode('normal'))
+
+/*
+Color Theme change across the site:
+*/
+document.querySelector('.darkBtn').addEventListener('click', () => changeMode('dark'));
+document.querySelector('.matrixBtn').addEventListener('click', () => changeMode('matrix'));
+document.querySelector('.normalBtn').addEventListener('click', () => changeMode('normal'));
 
 function changeMode(mode) {
-    const body = document.querySelector('body')
-    body.className = ''
-    body.classList.add(mode)
+    const body = document.querySelector('body');
+    body.className = '';
+    body.classList.add(mode);
 }

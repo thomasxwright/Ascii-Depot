@@ -66,7 +66,7 @@ app.listen(process.env.PORT, () => {
 /*
 Full Stack structure:
 	- This file, server.js is the main file. This is the entry point to the backend.
-	- All API requests go through the router in the /routes/ folder.
+	- All API requests go through this file and then the router in the /routes/ folder.
 	- General path:
 		- (This file) server.js --> routes --> controllers --> views --> render page and display to user.
 */

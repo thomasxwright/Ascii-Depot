@@ -13,16 +13,16 @@ Built using Node.js, MongoDB, and Express.js. Utilizes the MVC architecture.
 ---
 # How to Use:
 1. Install packages and dependencies.
-2. Create .env file with PORT and DB_STRING to a MongoDB cluster.
+2. Create .env file in the config/ folder with PORT number set, and DB_STRING to a MongoDB cluster.
 3. Input text to save a note or a link to an image to generate an ASCII note.
+
+---
+# Install Node packages and dependencies used for development via the terminal:
+`npm install` To run the server: `npm start`
 
 ---
 # Packages / Dependencies used:
 ascii-art-image, bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
-
----
-# Install Node packages and dependencies used for development via the terminal:
-`npm install`
 
 ---
 # Future functionality and features:

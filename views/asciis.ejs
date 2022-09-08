@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ascii Art Generator</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>ASCMii - An ASCII art saver!</title>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body class="normal">
     <section class="gallery">
         
         <form action="/logout">
             <button type="submit">Log out</button>
-         </form>
+        </form>
         <h1>
             <%= user.userName %> has some art to show
         </h1>
@@ -52,7 +54,19 @@
 
     <a href="/logout">Logout</a>
 
-    <script src="js/main.js"></script>
-</body>
 
+    <!-- Local JavaScript -->
+    <script src="js/main.js"></script>
+
+</body>
 </html>
+
+<!-- TODO -->
+<!--
+    - Use CSS Boostrap for full width fluid containers.
+    - Set the last ul element within CSS Flexbox. (flex-row for monitors, flex-column for tablets and phones)
+
+    - Potentially move ASCII art within CSS Boostrap fluid containers?
+        - containers might expand to original size as is now. (overflow past the size of mobile screens)
+        - ASCII might warp and break if the container is rigid for mobile devices 
+-->
