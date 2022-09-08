@@ -42,6 +42,17 @@
         <textarea rows="5" cols="60" name="asciiArt" placeholder="Enter ASCII art"></textarea>
         <input type="submit" value="Record New ASCII">
     </form>
+    <form action="/asciis/createPost" enctype="multipart/form-data" method="POST" class="imageForm">
+        <div>
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="titleInputID" placeholder="Title Here" required>
+        </div>
+        <div>
+            <label for="file">Or Upload an Image to transform into Ascii art!</label>
+            <input type="file" name="file" id="imageInputID">
+        </div>  
+        <button type="submit">Submit Image</button>
+    </form>
 
     <ul class="colors">
         <li>Change Color Mode:</li>

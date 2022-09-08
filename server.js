@@ -15,6 +15,7 @@ const passport = require('passport');
 const session = require('express-session');
 const flash = require('express-flash');
 const logger = require('morgan');
+const methodOverride = require("method-override");
 const MongoStore = require('connect-mongo')(session);
 const connectDB = require('./config/database');
 const mainRoutes = require('./routes/main');
@@ -36,6 +37,9 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(logger('dev'));
+
+//Use forms for put / delete
+app.use(methodOverride("_method"));
 
 // sessions
 app.use(

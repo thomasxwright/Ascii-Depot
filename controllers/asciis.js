@@ -3,9 +3,11 @@ const session = require('express-session')
 const Ascii = require('../models/Ascii')
 const asciiImage = require('ascii-art-image')
 const mongoose = require('mongoose')
-const path = require('path')
+// const path = require('path')
 const multer  = require('multer');
-const {GridFsStorage} = require('multer-gridfs-storage');
+// const {GridFsStorage} = require('multer-gridfs-storage');
+const cloudinary = require("../middleware/cloudinary");
+const Post = require("../models/Post");
 
 require('dotenv').config({path: './config/.env'})
 
@@ -16,68 +18,28 @@ module.exports = {
         console.log(req.user)
         try{
             const asciiPaintings = await Ascii.find({userId:req.user.id})
-            res.render('asciis.ejs', {asciis: asciiPaintings, user: req.user})
+            const imagePosts = await Post.findById(req.params.id);
+            res.render('asciis.ejs', {asciis: asciiPaintings, user: req.user, posts: imagePosts})
         }catch(err){
             console.log(err)
         }
     },
-    postImage: async (req, res)=>{
-        try{
-            const asciiPaintings = await Ascii.find({userId:req.user.id})
-            const connection = mongoose.connect(process.env.DB_STRING)
-            const storage = new GridFsStorage({
-                 db: connection,
-                 file: (req, file) => {
-                    return {
-                        filename: file.fieldname + '-' + Date.now()  + '-' + path.extname(file.originalname),
-                        aliases: req.user.id
-                    }
-                 }
-            });
-              // Initialize Upload
-            const upload = multer({
-                storage: storage,
-                limits:{fileSize: 5000000},
-                fileFilter: function(req, file, cb){  // Filters Different Filetypes
-                  checkFileType(file, cb);
-                }
-              }).single('image')
-
-                // Check File Type
-            function checkFileType(file, cb){
-              // Allowed extensions
-              const filetypes = /jpeg|jpg|png|gif|webp/
-              // Check extension
-              const extname = filetypes.test(path.extname(file.originalname).toLowerCase())
-              // Check mimetype
-              const mimetype = filetypes.test(file.mimetype)
-              if(mimetype && extname){
-                return cb(null, true)
-              }else{
-                cb('Error Images Only. (.jpeg, .jpg, .png, .gif, and .webp are accepted filetypes.')
-              }
-            }
-
-            // Upload is a function call from above to input the image into the databaase
-            upload(req, res, (err) => {
-                if(err){
-                  res.render('asciis', {
-                    msg: err,
-                    user: req.user.id,
-                    asciis: asciiPaintings
-                  })
-                  res.redirect('/asciis')
-                }else{
-                  res.render('asciis', {
-                    msg: err,
-                    user: req.user.id,
-                    asciis: asciiPaintings
-                  })
-                }
-              })
-        }catch(err){
-            console.log(err)
-        }
+    createPost: async (req, res) => {
+      try {
+        // Upload image to cloudinary
+        const result = await cloudinary.uploader.upload(req.file.path);
+  
+        await Post.create({
+          title: req.body.title,
+          image: result.secure_url,
+          cloudinaryId: result.public_id,
+          user: req.user.id,
+        });
+        console.log("Post has been added!");
+        res.redirect("/asciis");
+      } catch (err) {
+        console.log(err);
+      }
     },
     createAsciiArt: async (req, res)=>{
         //if text entry begins with "http", assume its an image link - no validation that its an image currently.
